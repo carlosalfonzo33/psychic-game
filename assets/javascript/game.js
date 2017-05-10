@@ -4,5 +4,13 @@ var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
 
 
 //Computer randomly selects the word 
-var compChoice = Math.floor(Math.random() * letters.length);
-console.log(compChoice);
+var randomIndex = Math.floor(Math.random() * letters.length);
+var compChoice = letters[randomIndex]
+console.log("compChoice: ",compChoice);
+
+//User Choice 
+document.onkeyup = function(event) { 
+	console.log("event: ", event)
+	 var userChoice = event.key;  // this saves the key from user
+	 console.log("userChoice: ", userChoice)
+}
