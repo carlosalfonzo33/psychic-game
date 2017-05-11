@@ -4,8 +4,8 @@ var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l
 //my var settings 
 var wins = 0;
 var losses = 0;
-var guesses = 9;
-var guessesLeft = 9;
+var guesses = 10;
+var guessesLeft = 10;
 var guessedLetters = [];
 var letterToGuess = null;
 
@@ -29,8 +29,8 @@ var updateGuessesSoFar = function() {
 };
 // Function will be called when we reset everything
 var reset = function() {
-  totalGuesses = 9;
-  guessesLeft = 9;
+  totalGuesses = 10;
+  guessesLeft = 10;
   guessedLetters = [];
 
   updateLetterToGuess();
@@ -55,14 +55,14 @@ document.onkeyup = function(event) {
             if (userGuess == letterToGuess){
                 wins++;
                 document.querySelector('#wins').innerHTML = "Wins: " + wins;
-                alert("Yes, you are psychic!");
+                alert("YOU WIN!  you must be psychic!");
                 reset();
             }
         }else if(guessesLeft == 0){
             // Then we will loss and we'll update the html to display the loss 
             losses++;
             document.querySelector('#losses').innerHTML = "Losses: " + losses;
-            alert("Sorry, you're not psychic, maybe try again?");
+            alert("Sorry, YOU LOSE!  try again?");
             // Then we'll call the reset. 
             reset();
         }
