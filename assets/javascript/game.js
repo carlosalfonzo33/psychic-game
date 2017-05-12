@@ -40,9 +40,15 @@ document.onkeyup = function(event) {
     guessesLeft--;
   var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
-  guessedLetters.push(userGuess);
-  updateGuessesLeft();
-  updateGuessesSoFar();
+  if (event.keyCode >= '65' && event.keyCode <= '90') {
+
+    guessedLetters.push(userGuess);
+    updateGuessesLeft();
+    updateGuessesSoFar();
+
+  } else { 
+    alert("Only guess A-Z!!!");
+  }
 
         if (guessesLeft > 0){
             if (userGuess == letterToGuess){
@@ -50,11 +56,12 @@ document.onkeyup = function(event) {
                 document.querySelector('#wins').innerHTML = "Wins: " + wins;
                 alert("YOU WIN!  you must be psychic!");
                 reset();
-            }
+            } 
         }else if(guessesLeft == 0){
             losses++;
             document.querySelector('#losses').innerHTML = "Losses: " + losses;
             alert("Sorry, YOU LOSE!  try again?");
             reset();
         }
+
 };
