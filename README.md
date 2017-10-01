@@ -1,6 +1,6 @@
 # psychic-game
 
-## Technologies used: Javascript ES5,  HTML5, and CSS3. 
+## Technologies used: Javascript,  HTML5, and CSS3. 
 
 
 A basic game built using Javascript, HTML5, and CSS3. The app randomly picks a letter, and the user has to guess which letter the app chose. "Guess what letter I'm thinking of"
